@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="/add-book.css">
+</head>
+<body>
+
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+        <form action="/add-book" method="post" th:object="${newBook}">
+            <input required class="fadeIn second" type="text" id="isbn" name="isbn" placeholder="ISBN" th:object="${newBook.isbn}">
+            <input required class="fadeIn second" type="text" id="title" name="title" placeholder="Title" th:object="${newBook.title}">
+            <input required class="fadeIn third" type="text" id="author" name="author" placeholder="Author" th:object="${newBook.author}">
+
+            <input type="submit" class="fadeIn fourth" value="ADD">
+        </form>
+    </div>
+</div>
+</body>
+</html>
